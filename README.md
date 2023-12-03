@@ -3,8 +3,9 @@
 This guide provides a detailed explanation of the process for utilizing AWS services to train a Machine Learning (ML) model on multiple parallel EC2 instances within the Elastic Compute Cloud. The ML program is developed in Python language, incorporating the [Apache Spark MLlib libraries] (https://spark.apache.org/mllib/). Both the training and prediction programs are configured to execute within a container.
 
 Github link - <  >
-#Docker Image for Training: [pavanvenkatbhumula/wine:v1] (https://hub.docker.com/repository/docker/pavanvenkatbhumula/wine/general)
-#Docker Image for Testing: [pavanvenkatbhumula/winetest:v1] (https://hub.docker.com/repository/docker/pavanvenkatbhumula/winetest/general)
+*Docker Image for Training*: [pavanvenkatbhumula/wine:v1] (https://hub.docker.com/repository/docker/pavanvenkatbhumula/wine/general)
+
+*Docker Image for Testing*: [pavanvenkatbhumula/winetest:v1] (https://hub.docker.com/repository/docker/pavanvenkatbhumula/winetest/general)
 
 To run the ML Image application for training on multiple parallel EC2 instances, a cluster needs to be set up in ECS. The steps given below are followed to create a cluster with 4 instances.
 In AWS Management Console search for **Elastic Container Service (ECS)**
