@@ -99,3 +99,67 @@ where ,
 
 ### F1 Score of the Model
 <img src="https://github.com/pavanvenkatreddy/Wine_Quality_Preddiction_ECS_Docker/blob/main/Screenshot%202023-12-04%20at%201.41.54%20AM.png" width="500">
+
+## Running the Prediction Application without Docker
+To run the prediction application without docker, the following packages are needed
+- [Pyspark](https://pypi.org/project/pyspark/)
+- [JAVA JDK](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
+- [numpy](https://pypi.org/project/numpy/)
+- [Apache Spark(spark-3.0.1-bin-hadoop2.7.tgz)](https://spark.apache.org/downloads.html)
+
+### Java Installation
+- Download Java JDK from here [link](https://www.oracle.com/java/technologies/javase-jdk13-downloads.html)
+- Go to downloads folder and run the following command on console
+```Console
+ $ sudo dpkg -i jdk-13.0.2_linux-x64_bin.deb
+```
+- Run `java --version` on console to verify if java is installed.
+
+- To setup environment variables for java, include the following in  `/etc/environemnt` file as shown below using any text editor (i.e nano, gedit)
+```Console
+ $ JAVA_HOME=/usr/lib/jvm/jdk-13.0.2
+```
+- Finally source the `/etc/environment` file, 
+
+```Console
+ $ source /etc/environment
+```
+
+### Installing Apache Spark
+- Go to [Spark Website](https://spark.apache.org/downloads.html)
+- Select Spark Release Version as 3.0.1 and download the .tgz file
+ 
+- Go to the downloads folder and extract the tgz file using the following command
+```Console
+ $ sudo tar -xvzf spark-3.0.1-hadoop2.7.tgz 
+```
+
+- To setup environment variables for pyspark, include the following `~/.bashrc` file
+```Console
+ export SPARK_HOME=~/Downloads/spark-3.0.1-bin-hadoop2.7
+ export PATH=$PATH:$SPARK_HOME/bin
+ export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+ export PYSPARK_PYTHON=python3
+ export PATH=$PATH:$JAVA_HOME/jre/bin
+```
+
+- Finally source `./bashrc` file or restart `console` for the variables to get updated
+
+```Console
+ $ source ~./bashrc
+ ```
+- Run `pyspark` in console to verify the installation. 
+
+
+### Running prediction application
+- Make sure Modelfile is present before running the *wine_test_nodocker.py* file. In case it is not present run the *wine_train_nodocker.py* file to generate the same. This can be done by executing the following command
+```Console
+ $ python3 wine_train_nodocker.py
+```
+- Run the prediction app using this command
+```Console
+ $ python3 wine_test_nodocker.py TestDataset.csv
+```
+After the command is executed successfully, two files will be generated in the directory, `Results.txt` and `Resultdata` folder containing csv file.
+
+
