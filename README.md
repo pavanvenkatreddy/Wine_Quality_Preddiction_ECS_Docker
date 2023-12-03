@@ -10,20 +10,20 @@
 To run the ML Image application for training on multiple parallel EC2 instances, a cluster needs to be set up in ECS. The steps given below are followed to create a cluster with 4 instances.
 <br>
 <br>In AWS Management Console search for **Elastic Container Service (ECS)**
-<br>
-  <br>__In ECS Console, select **Cluster** and click on *"Create Cluster"*
+
+  In ECS Console, select **Cluster** and click on *"Create Cluster"*
   <br>
-  <br>__*Cluster name*__ : *winequality* ~your desired name
+  __*Cluster name*__ : *winequality* ~your desired name
   <br>
-  <br>__*Provisioning model*__ : *On-Demand Instance*
+  __*Provisioning model*__ : *On-Demand Instance*
   <br>
-  <br>__*EC2 instance type*__ : *t2.micro*
+  __*EC2 instance type*__ : *t2.micro*
   <br>
-  <br>__*Number of instances*__ : *4*
+  __*Number of instances*__ : *4*
   <br>
-  <br>__*Key Pair*__ : *Choose an appropriate key pair*
+  __*Key Pair*__ : *Choose an appropriate key pair*
   <br>
-  <br>__*Security group inbound rules (Port range)*__ : *22-80* 
+  __*Security group inbound rules (Port range)*__ : *22-80* 
   <br>
 <br>- Click on *"Create"*  to create a cluster 
 <br>
