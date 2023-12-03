@@ -96,3 +96,6 @@ where ,
 `TestDataset.csv` is the name of the input file for prediction testing.
 
 *Note: For the above command to work the Modelfile and TestDataset.csv must be present at /home/ec2-user*
+
+### F1 Score of the Model
+<img src="https://github.com/pavanvenkatreddy/Wine_Quality_Preddiction_ECS_Docker/blob/main/Screenshot%202023-12-04%20at%201.41.54%20AM.png" width="500">
